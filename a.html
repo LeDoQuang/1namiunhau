@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Year of Love - Quang & Phương Chi</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .photo-slider {
+    max-width: 100vw;
+    max-height: 70vh; /* giữ phần dưới không bị che */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+        :root {
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff758f;
+            --accent-color: #fff0f3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #fff0f3, #ffccd5);
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+        .hero {
+            height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; width: 200%; height: 200%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1; animation: float 20s infinite linear;
+        }
+        .hero-content {
+            text-align: center; z-index: 1; padding: 20px;
+        }
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem; color: var(--primary-color);
+            margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+            transform: rotate(-5deg); animation: heartbeat 1.5s infinite;
+        }
+        .date {
+            font-size: 1.5rem; color: #666; letter-spacing: 3px;
+        }
+        .heart-animation {
+            position: absolute; font-size: 2rem; color: var(--primary-color);
+            animation: heartFloat 5s infinite; opacity: 0;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-50%, -50%) rotate(10deg); }
+            50% { transform: translate(50%, 50%) rotate(-10deg); }
+            75% { transform: translate(-30%, 30%) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        @keyframes heartbeat {
+            0%,100% { transform: scale(1); }
+            25%,75% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+        }
+        @keyframes heartFloat {
+            0% { transform: translateY(0) scale(0); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+        .timeline {
+            padding: 80px 20px; position: relative;
+        }
+        .timeline::before {
+            content: ''; position: absolute; left: 50%; width: 4px; height: 100%;
+            background: var(--primary-color); transform: translateX(-50%);
+        }
+        .timeline-item {
+            width: 45%; padding: 20px; background: rgba(255,255,255,0.9);
+            border-radius: 15px; margin: 40px 0; position: relative;
+            backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform .3s;
+        }
+        .timeline-item:hover { transform: scale(1.03); }
+        .timeline-item:nth-child(odd) { margin-left: auto; }
+        .timeline-item::before {
+            content: ''; position: absolute; width: 20px; height: 20px;
+            background: var(--primary-color); border-radius: 50%; top: 30px;
+        }
+        .timeline-item:nth-child(odd)::before { left: -35px; }
+        .timeline-item:nth-child(even)::before { right: -35px; }
+        .photo-slider { width: 100%; height: 600px; margin: 80px 0; }
+        .swiper-slide {
+            background-position: center; background-size: cover;
+            border-radius: 20px; overflow: hidden; position: relative;
+        }
+        .swiper-slide::after {
+            content: ''; position: absolute; width: 100%; height: 100%;
+            background: linear-gradient(45deg, rgba(255,77,109,0.3), transparent);
+        }
+        .love-letter {
+            max-width: 800px; margin: 80px auto; padding: 40px;
+            background: rgba(255,255,255,0.9); border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px);
+            position: relative;
+        }
+        .love-letter::before {
+            content: '💌'; position: absolute; font-size: 3rem;
+            top: -30px; left: -30px; transform: rotate(-15deg);
+        }
+        @media (max-width: 768px) {
+            .main-title { font-size: 3rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 80%; margin-left: 40px; }
+            .timeline-item::before { left: -35px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content" data-aos="zoom-in">
+            <h1 class="main-title">Quang ❤️ Phương Chi</h1>
+            <div class="date" data-aos="fade-up">20.04.2024 - 20.04.2025</div>
+        </div>
+        <div class="heart-animation" style="left: 10%; animation-delay: 0s">❤️</div>
+        <div class="heart-animation" style="left: 30%; animation-delay: 1s">❤️</div>
+        <div class="heart-animation" style="left: 50%; animation-delay: 2s">❤️</div>
+        <div class="heart-animation" style="left: 70%; animation-delay: 3s">❤️</div>
+        <div class="heart-animation" style="left: 90%; animation-delay: 4s">❤️</div>
+    </div>
+
+    <section class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Lần đầu gặp nhau (lớp thêm Toán)</h3>
+            <p>Chúng mình gặp nhau tại lớp học thêm Toán, ánh mắt chạm nhau lần đầu.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Học chung Teamwork</h3>
+            <p>Cùng tham gia lớp Teamwork, bắt đầu nói chuyện nhiều hơn.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Học chung lớp chính thức</h3>
+            <p>Sát cánh bên nhau trong cùng một lớp học.</p>
+            <div class="date">05.09.2023</div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>CTV BCH Đoàn trường</h3>
+            <p>Cùng hoạt tại Đoàn trường.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Tình yêu bắt đầu nảy mầm</h3>
+            <p>Cảm xúc đặc biệt xuất hiện, chúng mình chính thức thành đôi.</p>
+            <div class="date">20.04.2024</div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Lần đầu đi xem phim</h3>
+            <p>Bên nhau trong rạp chiếu, nắm tay nhau lần đầu.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Lần đầu đi cà phê</h3>
+            <p>Trò chuyện cả buổi, chơi các trò chơi.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Chụp photobooth</h3>
+            <p>Bộ ảnh kỷ niệm ngọt ngào tại góc photobooth.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Đi 2n1d với lớp</h3>
+            <p>Ước gì sắp tới 2n1d mình đêm hôm đó đi chơi riêng với nhau.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Cãi vã nhỏ</h3>
+            <p>Lần đầu giận dỗi, rồi lại nhanh chóng làm lành.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Chia tay ngắn</h3>
+            <p>Khoảng lặng đau lòng trước khi chúng mình quay lại.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Quay lại yêu nhau</h3>
+            <p>Yêu lại từ đầu, trân trọng hơn từng khoảnh khắc.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+            <h3>Kỷ niệm 6 tháng</h3>
+            <p>Chúng mình cùng nhau đánh dấu nửa năm hạnh phúc.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+            <h3>Kỷ niệm 1 năm</h3>
+            <p>Tròn một năm yêu nhau với muôn vàn kỷ niệm ngọt ngào.</p>
+            <div class="date">20.04.2025</div>
+        </div>
+    </section>
+
+    <div class="photo-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const sliderImages = ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png','14.png'];
+                    const wrapper = document.querySelector('.swiper-wrapper');
+                
+                    sliderImages.forEach((src) => {
+                        const slide = document.createElement('div');
+                        slide.className = 'swiper-slide';
+                
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = "Ảnh kỷ niệm";
+                
+                        slide.appendChild(img);
+                        wrapper.appendChild(slide);
+                    });
+                
+                    new Swiper('.swiper', {
+                        grabCursor: true,
+                        centeredSlides: true,
+                        slidesPerView: 'auto',
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination'
+                        },
+                        autoplay: {
+                            delay: 3000
+                        }
+                    });
+                });
+                </script>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    <article class="love-letter" data-aos="fade-up">
+        <h2>Thư gửi người tớ yêu</h2>
+        <p>Gửi người yêu của tớ, nếu trên thế giới này có 1 tỉ người yêu cậu, thì tớ sẽ nằm trong số đó, nếu có 1 người yêu cậu thì đó sẽ là tớ, còn nếu không còn ai yêu cậu thì chắc chắn lúc đó tớ đã chết rồi. Tớ xin nhũi vì viết cho cậu muộn, tớ muộn lần này thật chỉn chu, thật đầu tư, thật đẹp đẽ để tớ luôn có thể mang đến cho cậu những điều tốt đẹp nhất. Cậu biết không trong 1 năm qua mình bên nhau mặc dù mình thi thoáng mình có dỗi nhau nhưng mà tớ vẫn yêu cậu nhiều lắmmmm, iu nhìu nắm nuôn íiiii, iu như chưa bao giờ iuuuu, cậu chính là người mang sắc màu đến cuộc sống của tớ, là người khiến tớ như được tái sinh, tớ muốn phát triển bản thân tớ vì cậu, rõ là thế mà, từ khi yêu cậu vào tớ thấy so với tớ năm lớp 10 tớ trưởng thành lên gắc nhìu, cậu bít vì sao hông, vì iu cậu đóooo. Cảm ơn cậu vì mang ánh sáng đến cuộc đời đen tối của tớ, mang hơi ấm đến trái tim lạnh lẽo của tớ, mang sắc màu đến cuộc đời tẻ nhạt của tớ. Cảm ơn và xin lỗi cậu. Xin lỗi cậu vì nhiều lần tớ làm cậu khó chịu, cãi lại lời cậu, cậu nhắc nhiều tớ không chịu thay đổi, tớ xin lỗi cậuuu. Cuối cùng tớ chỉ muốn nói là tớ yêu cậu rất nhiều, cho dù thế nào đi nữa tớ vẫn sẽ yêu cậu, lúc nào mà cậu nghĩ tớ không yêu cậu nữa thì hãy nhớ lại rằng tớ luôn yêu cậu. Love you. Moa Moa</p>
+        <audio controls autoplay loop hidden>
+            <source src="a.mp3" type="audio/mpeg">
+        </audio>
+    </article>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        new Swiper('.swiper', {
+            effect: 'coverflow', grabCursor: true, centeredSlides: true,
+            slidesPerView: 'auto', loop: true,
+            coverflowEffect: { rotate: 20, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+            pagination: { el: '.swiper-pagination' },
+            autoplay: { delay: 3000 }
+        });
+        function createHearts() {
+            document.querySelectorAll('.heart-animation').forEach(h=>{
+                h.style.animation = `heartFloat ${5 + Math.random()*5}s infinite`;
+            });
+        }
+        createHearts();
+    </script>
+</body>
+</html>
